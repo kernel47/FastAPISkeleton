@@ -46,6 +46,14 @@ Docs:
 - `http://localhost:8000/docs`
 - `http://localhost:8000/openapi.json`
 
+Swagger UI est servi en mode offline. Les fichiers JS/CSS/images sont embarques dans:
+
+```text
+app/static/swagger/
+```
+
+La VM n'a donc pas besoin d'acces Internet pour afficher `/docs`.
+
 ## Nginx
 
 Un exemple de reverse proxy est fourni dans:
