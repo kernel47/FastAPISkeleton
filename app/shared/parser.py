@@ -38,7 +38,14 @@ def extract_next_after(payload: Any):
         return None
     meta = payload.get("meta") or {}
     pagination = meta.get("pagination") or {}
-    return pagination.get("after") or meta.get("after") or payload.get("after")
+    return (
+        pagination.get("after")
+        or pagination.get("next")
+        or meta.get("after")
+        or meta.get("next")
+        or payload.get("after")
+        or payload.get("next")
+    )
 
 
 def flatten_record(record: Dict[str, Any]) -> Dict[str, Any]:
